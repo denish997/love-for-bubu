@@ -1,0 +1,672 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09030a;
+    color: #fff;
+    overflow-x: hidden;
+    font-family: "Noto Sans Gujarati", sans-serif;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at center, #4a102d 0%, #170712 45%, #050205 100%);
+}
+
+.intro-content {
+    max-width: 700px;
+    animation: introAppear 2s ease;
+}
+
+.small-text {
+    font-size: 18px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.intro h1 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: clamp(35px, 7vw, 70px);
+    line-height: 1.5;
+
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #ffb6d5,
+        #fff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro p {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 2;
+    color: #e7cdd8;
+}
+
+.intro button {
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #ff7eb3;
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    font-family: "Noto Sans Gujarati", sans-serif;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 70, 140, 0.4);
+
+    transition: 0.4s;
+}
+
+.intro button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(255, 70, 140, 0.8);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+#main {
+    display: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            rgba(20, 3, 14, 0.65),
+            rgba(20, 3, 14, 0.9)
+        ),
+        radial-gradient(
+            circle,
+            #64143e,
+            #10040c
+        );
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero-text span {
+    color: #ff9fc4;
+    letter-spacing: 2px;
+}
+
+.hero h2 {
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: clamp(55px, 12vw, 110px);
+
+    margin: 20px 0;
+
+    text-shadow:
+        0 0 20px #ff3e8a,
+        0 0 50px #ff3e8a;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 2;
+    color: #ead7df;
+}
+
+
+/* =========================
+   PHOTO SLIDER
+========================= */
+
+.memories {
+    padding: 100px 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29101d,
+            #080308
+        );
+
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    padding: 0 25px;
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: #ff9fc4;
+}
+
+.section-title h2 {
+    margin-top: 15px;
+
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    line-height: 1.6;
+}
+
+
+/* SLIDER */
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.group {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+
+    animation: slidePhotos 35s linear infinite;
+}
+
+
+/* PAUSE WHEN TOUCH / HOVER */
+
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+
+/* PHOTO */
+
+.photo-card {
+    width: 250px;
+    height: 400px;
+
+    flex-shrink: 0;
+
+    padding: 5px;
+
+    border-radius: 25px;
+
+    
+
+    
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 21px;
+
+    display: block;
+}
+
+
+/* RIGHT → LEFT */
+
+@keyframes slidePhotos {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(
+            calc(-50% - 12.5px)
+        );
+    }
+}
+
+
+/* GLOW */
+
+@keyframes glow {
+
+    from {
+        box-shadow:
+            0 0 10px #ff3d91,
+            0 0 20px rgba(255, 61, 145, 0.3);
+    }
+
+    to {
+        box-shadow:
+            0 0 20px #ff3d91,
+            0 0 50px rgba(255, 61, 145, 0.7);
+    }
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.message {
+    padding: 100px 20px;
+
+    display: flex;
+    justify-content: center;
+
+    background: #0b0409;
+}
+
+.letter {
+    max-width: 700px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 126, 179, 0.35);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 40px rgba(255, 50, 130, 0.15);
+}
+
+.heart-icon {
+    font-size: 55px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.letter h2 {
+    margin: 20px 0 30px;
+
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: 35px;
+}
+
+.letter p {
+    margin: 18px 0;
+
+    color: #dfcbd4;
+
+    line-height: 2;
+    font-size: 17px;
+}
+
+.letter .special {
+    margin-top: 35px;
+}
+
+.letter h3 {
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: 27px;
+
+    color: #ff9fc4;
+
+    line-height: 1.8;
+
+    text-shadow:
+        0 0 15px rgba(255, 80, 150, 0.7);
+}
+
+.signature {
+    margin-top: 40px;
+
+    font-size: 18px;
+
+    color: #dcb7c7;
+}
+
+.signature strong {
+    color: #ff9fc4;
+    font-size: 23px;
+}
+
+
+/* =========================
+   FLIP CARDS
+========================= */
+
+.cards-section {
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(
+            circle,
+            #24101b,
+            #080308
+        );
+}
+
+.cards {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.flip-card {
+    width: 280px;
+    height: 250px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.8s;
+}
+
+.flip-card:hover .flip-inner,
+.flip-card:active .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255, 126, 179, 0.4);
+
+    box-shadow:
+        0 0 25px rgba(255, 60, 140, 0.15);
+}
+
+.flip-front {
+    flex-direction: column;
+
+    gap: 15px;
+
+    font-size: 55px;
+
+    background: linear-gradient(
+        145deg,
+        #32101f,
+        #12050d
+    );
+}
+
+.flip-front span {
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: 22px;
+
+    color: #ffb0ca;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #58132f,
+            #210817
+        );
+
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: 20px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    min-height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle,
+            #4d102e 0%,
+            #170611 45%,
+            #050205 100%
+        );
+}
+
+.final-content {
+    max-width: 700px;
+}
+
+.big-heart {
+    font-size: 90px;
+
+    animation: heartbeat 1.5s infinite;
+
+    filter:
+        drop-shadow(0 0 20px #ff3e8a);
+}
+
+.final h2 {
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: 38px;
+
+    margin: 25px 0;
+}
+
+.final p {
+    color: #dfcbd4;
+
+    font-size: 18px;
+
+    line-height: 2;
+}
+
+.final h3 {
+    margin-top: 30px;
+
+    font-family: "Noto Serif Gujarati", serif;
+
+    color: #ff9fc4;
+
+    font-size: 25px;
+
+    line-height: 1.8;
+}
+
+.names {
+    margin-top: 45px;
+
+    font-family: "Noto Serif Gujarati", serif;
+
+    font-size: 30px;
+
+    color: #fff;
+}
+
+.names span {
+    color: #ff4c94;
+
+    margin: 0 10px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.12);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .intro {
+        min-height: 100svh;
+        padding: 20px;
+    }
+
+    .intro h1 {
+        font-size: 35px;
+    }
+
+    .intro p {
+        font-size: 15px;
+    }
+
+    .photo-card {
+        width: 190px;
+        height: 270px;
+    }
+
+    .slider-track {
+        gap: 18px;
+        animation-duration: 28s;
+    }
+
+    .letter {
+        padding: 35px 20px;
+    }
+
+    .letter h2 {
+        font-size: 28px;
+    }
+
+    .letter h3 {
+        font-size: 22px;
+    }
+
+    .flip-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .final h2 {
+        font-size: 30px;
+    }
+
+    .final h3 {
+        font-size: 21px;
+    }
+}
